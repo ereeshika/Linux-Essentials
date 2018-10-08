@@ -2,4 +2,4 @@
 ### I know you can directly search for help :wink: But these are my favorites.
 
 #General Websites
-1. [LinuxQuestions.ORG](https:linuxquestions.org)
+1. [Linux Questions.ORG](https://www.linuxquestions.org)
