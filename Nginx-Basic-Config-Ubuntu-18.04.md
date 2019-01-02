@@ -3,7 +3,7 @@
 ## install nginx ##
 
 ```sudo apt update
-sudo apt install nginx
+   sudo apt install nginx
 ```
 
 ## firewall-config ##
@@ -63,7 +63,7 @@ sudo nano /etc/nginx/sites-available/example.com
 ## test config for errors and restart nginx ##
 
 ```sudo nginx -t
-sudo systemctl restart nginx
+   sudo systemctl restart nginx
 ```
 
 ## Only if you are testing on your local machine ##
