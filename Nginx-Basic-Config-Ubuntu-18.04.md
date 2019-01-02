@@ -1,32 +1,32 @@
 # Basic Nginx Setup on Ubuntu 18.04 #
 
-## install nginx ##
+## Install nginx ##
 
 ```console
 sudo apt update
 sudo apt install nginx
 ```
 
-## firewall-config ##
+## Firewall-config ##
 
 ```console
 sudo ufw allow 'Nginx HTTP'
 sudo ufw status
 ```
 
-## check public ip ##
+## Check public ip ##
 
 ```console
 ip addr show eth0 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'
 ```
 
-## setup or selcet directories ##
+## Setup or selcet directories ##
 
 ```console
 sudo mkdir -p /var/www/example.com/html
 ```
 
-## give access to user to edit files easily ##
+## Give access to user to edit files easily ##
 
 ```console
 sudo chown -R $USER:$USER /var/www/example.com/html
@@ -38,14 +38,14 @@ sudo chown -R $USER:$USER /var/www/example.com/html
 sudo chmod -R 755 /var/www
 ```
 
-## create server block ##
+## Create server block ##
 
 ```console
 sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/example.com
 sudo nano /etc/nginx/sites-available/example.com
 ```
 
-### basic content of a server block ###
+### Basic content of a server block ###
 
 ```
 server {
@@ -63,13 +63,13 @@ server {
 }
 ```
 
-## enable site by creating a symlink ##
+## Enable site by creating a symlink ##
 
 ```console
 sudo ln -s /etc/nginx/sites-available/example.com /etc/nginx/sites-enabled/
 ```
 
-## test config for errors and restart nginx ##
+## Test config for errors and restart nginx ##
 
 ```console
 sudo nginx -t
@@ -83,3 +83,10 @@ sudo nano /etc/hosts
 ```
 
 > 127.0.0.1 example.com www.example.com
+
+### Resources ###
+
+All the content above was based on below tutorials referred from [DigitalOcean](https://www.digitalocean.com)
+
+- [Installation](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04)
+- [Server Block Setup](https://www.digitalocean.com/community/tutorials/how-to-set-up-nginx-server-blocks-virtual-hosts-on-ubuntu-16-04)
