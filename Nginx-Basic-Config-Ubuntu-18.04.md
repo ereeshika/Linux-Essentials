@@ -62,8 +62,9 @@ sudo nano /etc/nginx/sites-available/example.com
 
 ## test config for errors and restart nginx ##
 
-```sudo nginx -t
-   sudo systemctl restart nginx
+```console
+sudo nginx -t
+sudo systemctl restart nginx
 ```
 
 ## Only if you are testing on your local machine ##
